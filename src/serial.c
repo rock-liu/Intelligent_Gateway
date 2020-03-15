@@ -179,13 +179,13 @@ void* send_th(void* arg)
 
 	int fd = *(int*)arg;
 	char buf[256]={"1           开机          百岁山         3             10 "};
-//	while (1)
-//	{
+	while (1)
+	{
 		sem_wait(&sem_send);
 		write(fd, buf, 256);
 		sleep(2);
 		sem_post(&sem_recv);
-//	}
+	}
 
 }
 
